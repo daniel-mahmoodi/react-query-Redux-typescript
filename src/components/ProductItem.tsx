@@ -7,7 +7,7 @@ interface ProductItemProps {
 }
 const ProductItem: FunctionComponent<ProductItemProps> = ({ data }) => {
   console.log("daata", data);
-  return <div>{data.id}</div>;
+  return <div>{data.title}</div>;
 };
 
 export default ProductItem;
