@@ -1,7 +1,7 @@
 import { FunctionComponent, useState } from "react";
 import { ListOfItemsParams, ProductItemType } from "../repo/models";
 import useListOfItemsPaginated from "../Hook/useListOfItemsPaginated";
-import ProductItem from "./ProductItem";
+import ProductItem from "./Products/ProductItem";
 
 interface ListOfItemsProps {}
 
@@ -10,9 +10,7 @@ const ListOfItems: FunctionComponent<ListOfItemsProps> = () => {
     pageNumber: 1,
     rowCount: 10,
   });
-  console.log("pagePatams", pageParams);
   const { data, isPending, totalItem } = useListOfItemsPaginated(pageParams);
-  console.log("useListOfItems data,isPending", data, isPending);
   if (isPending) {
     return <div>Loading............</div>;
   }
@@ -20,7 +18,7 @@ const ListOfItems: FunctionComponent<ListOfItemsProps> = () => {
     return (
       <>
         <div>totalItems:{totalItem}</div>
-        <div>
+        <div className="flex overflow-hidden ">
           {data.map((item: ProductItemType) => (
             <ProductItem key={item.id} data={item} />
           ))}

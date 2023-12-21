@@ -21,7 +21,6 @@ function useInfiniteAds() {
         },
 
         select: useCallback((result)=>{
-             console.log('select')
             return result.pages.flatMap(e => e.results)
         }, [])
 

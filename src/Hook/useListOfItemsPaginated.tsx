@@ -3,7 +3,6 @@ import { ListOfItemsParams } from "../repo/models";
 import axios from "axios";
 
 const useListOfItemsPaginated = (pageParams: ListOfItemsParams) => {
-  // console.log("useListOfItems", pageNumber, rowCount);
   let totalItem = 0;
   const { isPending, data } = useQuery({
     queryKey: ["items", pageParams],

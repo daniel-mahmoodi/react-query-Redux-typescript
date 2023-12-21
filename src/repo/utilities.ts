@@ -1,0 +1,1 @@
+export const baseURL = `https://core.api.alpha.mivekani.com/`;
